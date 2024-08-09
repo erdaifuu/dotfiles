@@ -1,0 +1,13 @@
+default-timeout=5000
+ignore-timeout=1
+
+font=caskaydiacove nf 20
+
+background-color=#222222
+padding=10
+
+border-size=1
+border-color=#c5c8c6
+border-radius=6
+
+font-size
