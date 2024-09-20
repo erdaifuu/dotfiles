@@ -25,6 +25,9 @@ function wific
   nmcli device wifi connect $argv[1] password $argv[2]
 end
 
+function mkcd
+  mkdir $argv[1] && cd $argv[1]
+end
 
 zoxide init fish | source
 alias cd="z"
@@ -40,6 +43,13 @@ end
 #    echo no faggotry allowed on this terminal
 #end
 
+set QT_QPA_PLATFORMTHEME qt5ct
 
 set EDITOR nvim
 export EDITOR
+
+# Created by `pipx` on 2024-08-28 21:25:02
+set PATH $PATH /home/carl/.local/bin
+
+set GEM_HOME "$(ruby -e 'puts Gem.user_dir')"
+set PATH "$PATH:$GEM_HOME/bin"
