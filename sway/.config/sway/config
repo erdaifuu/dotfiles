@@ -26,8 +26,6 @@ set $cursor_theme Adwaita
 set $titlebar_text_size 10
 set $titlebar_font Cantarell
 
-
-
 font pango: SourceCodePro Medium 10
 
 set $clipboard "~/.local/share/clipman.json"
@@ -37,8 +35,12 @@ bindsym $mod+y exec clipman pick --tool="" --max-items=30
 gaps inner 10
 gaps outer 4
 
-# output eDP-1 scale 1
-output eDP-1 mode 2256x1504 scale 2
+### Output configuration
+exec waypaper --restore
+output eDP-1 {
+  mode 2256x1504 
+  scale 2
+}
 
 exec swayidle -w \
 	timeout 800 'swaylock -f' \
@@ -70,8 +72,7 @@ exec wireplumber
 default_border pixel 0
 default_floating_border pixel 0
 
-### Output configuration
-output * bg ~/Pictures/background/zengarden.jpg fill
+
 ### Idle configuration
 #
 # Example configuration:
@@ -261,6 +262,7 @@ bar {
 
 # Polkit
 exec /usr/libexec/polkit-gnome-authentication-agent-1
+
 # GTK
 # This is the only place where you must set GTK scaling
 set $gnome-schema org.gnome.desktop.interface
@@ -276,6 +278,6 @@ exec_always {
 seat seat0 xcursor_theme $cursor_theme $cursor_size
 
 # Fonts (For sway window titles only)
- font pango:$titlebar_font $titlebar_text_size
+font pango:$titlebar_font $titlebar_text_size
 
 include /etc/sway/config.d/*
