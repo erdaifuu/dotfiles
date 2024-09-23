@@ -7,6 +7,7 @@ alias kittyc="nvim ~/.config/kitty/kitty.conf"
 alias makoc="nvim ~/.config/mako/config"
 alias tofic="nvim ~/.config/tofi/config"
 alias nvimc="cd ~/.config/nvim/lua"
+alias agsc="cd ~/.config/ags/config.js"
 
 alias todo="bat ~/todo.md"
 alias help="bat ~/help.md"
