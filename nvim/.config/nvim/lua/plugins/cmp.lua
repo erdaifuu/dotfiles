@@ -1,6 +1,7 @@
 return {
   {
     "hrsh7th/cmp-nvim-lsp",
+    "lambdalisue/vim-suda",
     dependencies = {
       "kdheepak/cmp-latex-symbols"
     }

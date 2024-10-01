@@ -1,0 +1,108 @@
+{
+    "layer": "bottom", // Waybar at top layer
+    "position": "top", // Waybar at the bottom of your screen
+    // "height": 30, // Waybar height
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    // "modules-center": ["sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "custom/temp", "memory", "pulseaudio", "battery", "network", "tray"],
+    // Modules configuration
+    "sway/workspaces": {
+         "disable-scroll": false,
+         "all-outputs": false,
+         "format": "{icon}",
+         "format-icons": {
+           "1": "一",
+           "2": "二",
+           "3": "三",
+           "4": "四",
+           "5": "五",
+           "6": "六",
+           "7": "七",
+           "8": "八",
+           "9": "九",
+           "10": "十",
+           "urgent": "",
+           // "focused": "",
+           "default": ""
+         }
+    },
+    "sway/mode": {
+      "format": "<span style=\"italic\">{}</span>",
+      "max-length": 20
+    },
+    "tray": {
+      // "icon-size": 21,
+      "spacing": 10
+    },
+    "clock": {
+      "interval": 1,    
+      "format": " {:%B %d     %H:%M }",
+      "format-alt": "  {:%H:%M}",
+      "on-click-middle": "gnome-calendar",
+      "tooltip-format": "\n<span size='14pt' font='JetBrains Mono ExtraBold'>{calendar}</span>",
+      "calendar": {
+        "mode"          : "month",
+        "mode-mon-col"  : 3,
+        "on-scroll"     : 1,
+        "on-click-right": "mode",
+        "format": {
+          "months":     "<span color='#377C07'><b>{}</b></span>",
+          "days":       "<span color='#AEC957'><b>{}</b></span>",
+          "weekdays":   "<span color='#E2DBAC'><b>{}</b></span>",
+          "today":      "<span color='#538D1A'><b><u>{}</u></b></span>"
+        }
+      }
+    },
+    "cpu": {
+      "format": "    {usage}% "
+    }, 
+    "memory": {
+      "format": "   {}%",
+      "format-alt": "   {used}/{total} GiB",
+      "interval": 5,
+    },
+    "battery": {
+      "states": {
+        // "good": 95,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{capacity}%  {icon} ",
+      // "format-good": "", // An empty format will hide the module
+      // "format-full": "",
+      "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+      "bat": "BAT2"
+    },
+    "network": {
+      // "interface": "wlp2s0", // (Optional) To force the use of this interface
+      "format-wifi": "{essid} ({signalStrength}%)  ",
+      "format-ethernet": "  {ifname}: {ipaddr}/{cidr} ",
+      "format-disconnected": "⚠ Disconnected "
+    },
+    "pulseaudio": {
+      //"scroll-step": 5,
+      "format": " {icon}  {volume}%",
+      "format-bluetooth": "{volume}%  {icon}",
+      "format-muted": "",
+      "format-icons": {
+        "headphones": "",
+        "handsfree": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+    "custom/temp": {
+      "format": "   {} ",
+      "interval": 2,
+      "exec": "$HOME/.config/scripts/temp.sh 2> /dev/null"
+    }
+}

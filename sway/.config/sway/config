@@ -17,12 +17,12 @@ set $term kitty
 set $menu tofi-drun --drun-launch=true
 
 # GTK Variables 
-set $system_theme 'Arc-Dark'
+set $system_theme 'Everforest-Dark-Soft'
 set $system_icons 'Numix-Square'
 set $system_dpi_scaling_factor 1.0
-set $cursor_size 20
+set $cursor_size 24
 #set $cursor_theme Breeze
-set $cursor_theme Adwaita
+set $cursor_theme everforest-cursors 
 set $titlebar_text_size 10
 set $titlebar_font Cantarell
 
@@ -111,7 +111,7 @@ default_floating_border pixel 0
     bindsym $mod+d exec $menu
 
     # Lock your window
-    bindsym $mod+Shift+p exec swaylock
+    bindsym $mod+Shift+p exec hyprlock 
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
