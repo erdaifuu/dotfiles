@@ -26,7 +26,10 @@ return {
       lspconfig.texlab.setup({
         capabilities = capabilities
       })
-      lspconfig.pyright.setup({
+      lspconfig.pylsp.setup({
+        capabilities = capabilities
+      })
+      lspconfig.jdtls.setup({
         capabilities = capabilities
       })
 
